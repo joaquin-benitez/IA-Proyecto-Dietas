@@ -14,10 +14,14 @@ def run_backend():
 def run_frontend():
     """Run the Streamlit frontend"""
     print("Iniciando la aplicación frontend...")
-    print("Ruta esperada:", os.path.join(os.path.dirname(__file__), "diet-planner", "frontend"))
+    ruta_esperada = os.path.join(os.path.dirname(__file__), "frontend")
 
-    os.chdir(os.path.join(os.path.dirname(__file__), "frontend"))
+    print("Ruta esperada:", ruta_esperada)
 
+    # Cambiar al directorio correcto
+    os.chdir(ruta_esperada)
+
+    # Ejecutar Streamlit
     subprocess.run([sys.executable, "-m", "streamlit", "run", "app.py"])
 
 def open_browser():
